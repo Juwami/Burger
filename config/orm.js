@@ -1,7 +1,15 @@
 let connection = require("./connection")
 
-// selectAll()
-// insertOne()
-// updateOne()
+let orm = {
+    selectAll: function() {
 
-module.exports = 
+    },
+    insertOne: function() {
+
+    },
+    updateOne: function() {
+
+    }
+}
+
+module.exports = orm;
