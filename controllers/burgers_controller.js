@@ -23,13 +23,13 @@ router.post("/api/burgers", function(req, res) {
     })
 });
 
-router.put("/api/burger/:id", function(req, res) {
-    let id = req.params.id
-    burger.updateOne({
-        burger_name = req.body.name
-    })
-    return res.status(200).end();
-})
+// router.put("/api/burger/:id", function(req, res) {
+//     let id = req.params.id
+//     burger.updateOne({
+//         burger_name = req.body.name
+//     })
+//     return res.status(200).end();
+// })
 
 // export route tables
 module.exports = router
