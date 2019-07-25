@@ -1,0 +1,25 @@
+<h1>Eat Da Burger!</h1>
+
+<main class="container">
+    <section class="row">
+        <section class="col-6">
+            <ul>
+                {{#each burger_name}}
+                {{#unless devoured}}
+                {{> burger_name/burger-block devoured=false}}
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </section>
+        <section class="col-6">
+            <ul>
+                {{#each burger_name}}
+                {{#unless devoured}}
+                {{> burger-name/burger-block devoured=true}}
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </section>
+    </section>
+
+</main>

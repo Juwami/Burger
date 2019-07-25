@@ -19,6 +19,7 @@ router.post("/api/burgers", function(req, res) {
     ], [
         req.body.burger_name
     ], function(result) {
+        // responding the results ID of what went into mySQL
         res.json({ id: result.insertID})
     })
 });
