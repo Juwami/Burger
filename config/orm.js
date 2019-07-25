@@ -15,9 +15,9 @@ let orm = {
             console.log(result);
         })
     },
-    updateOne: function(name, newname) {
-        let query = "UPDATE burger SET ? = ?";
-        connection.query(query, [name, newname], function(err, result) {
+    updateOne: function(name, id) {
+        let query = "UPDATE burger SET burger_name = ? WHERE id = ?";
+        connection.query(query, [name, id], function(err, result) {
             if (err) throw err;
             console.log(result)
         })
