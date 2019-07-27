@@ -12,7 +12,8 @@ router.get("/", function(req, res) {
         let hbsObject = {
             burgers: data
         }
-        console.log(data)
+        // console log data pulled from mysql
+        // console.log(data)
         res.render("index", hbsObject)
     })
 })

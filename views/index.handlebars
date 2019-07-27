@@ -5,10 +5,12 @@
         <section class="col-6">
             <h2 class="text-center">Burgers Up For Grabs</h2>
             <ul>
-                {{#each burger_name}}
+                {{#each burgers}}
                 {{#unless devoured}}
-                <li class="form-control">{{this.burger_name}}</li>
-                <button class="btn" data-id="{{this.id}}">Eat</button>
+                <span>
+                    <li class="form-control mb-3 p-0 text-center"> {{this.burger_name}}
+                        <button class="btn btn-primary col-4 float-right" data-id="{{this.id}}">Eat</button> </li>
+                </span>
                 {{/unless}}
                 {{/each}}
             </ul>
@@ -16,10 +18,10 @@
         <section class="col-6">
             <h2 class="text-center">Missing Burgers(In Your Stomach)</h2>
             <ul>
-                {{#each burger_name}}
+                {{#each burgers}}
                 {{#if devoured}}
-                <li class="form-control">{{this.burger_name}}</li>
-                <button class="btn" data-id="{{this.id}}">Delete</button>
+                <li class="form-control mb-3 p-0 text-center">{{this.burger_name}}
+                    <button class="btn btn-secondary col-4 float-right" data-id="{{this.id}}">Delete</button> </li>
                 {{/if}}
                 {{/each}}
             </ul>
@@ -28,8 +30,8 @@
     <section class="row">
         <section class="col-12">
             <h2 class="text-center">What kind of burger do you want to eat?</h2>
-            <input class="rounded input-group mb-2" type="text">
-            <button type="submit" class="rounded btn btn-primary float-right">Add A Burger</button>
+            <input id="burger-name" class="rounded input-group mb-2" type="text">
+            <button id="submitBtn" type="submit" class="rounded btn btn-primary float-right">Add A Burger</button>
         </section>
     </section>
 
