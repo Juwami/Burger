@@ -1,8 +1,9 @@
-<h1>Eat Da Burger!</h1>
+<h1 class="text-center jumbotron display-1">Eat Da Burger!</h1>
 
 <main class="container">
     <section class="row">
         <section class="col-6">
+            <h2 class="text-center">Burgers Up For Grabs</h2>
             <ul>
                 {{#each burger_name}}
                 {{#unless devoured}}
@@ -12,6 +13,7 @@
             </ul>
         </section>
         <section class="col-6">
+            <h2 class="text-center">Missing Burgers(In Your Stomach)</h2>
             <ul>
                 {{#each burger_name}}
                 {{#unless devoured}}
@@ -19,6 +21,13 @@
                 {{/unless}}
                 {{/each}}
             </ul>
+        </section>
+    </section>
+    <section class="row">
+        <section class="col-12">
+            <h2 class="text-center">What kind of burger do you want to eat?</h2>
+            <input class="rounded input-group mb-2" type="text">
+            <button type="submit" class="rounded btn btn-primary float-right">Add A Burger</button>
         </section>
     </section>
 
