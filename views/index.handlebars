@@ -7,7 +7,8 @@
             <ul>
                 {{#each burger_name}}
                 {{#unless devoured}}
-                {{> burger_name/burger-block devoured=false}}
+                <li class="form-control">{{this.burger_name}}</li>
+                <button class="btn" data-id="{{this.id}}">Eat</button>
                 {{/unless}}
                 {{/each}}
             </ul>
@@ -16,9 +17,10 @@
             <h2 class="text-center">Missing Burgers(In Your Stomach)</h2>
             <ul>
                 {{#each burger_name}}
-                {{#unless devoured}}
-                {{> burger-name/burger-block devoured=true}}
-                {{/unless}}
+                {{#if devoured}}
+                <li class="form-control">{{this.burger_name}}</li>
+                <button class="btn" data-id="{{this.id}}">Delete</button>
+                {{/if}}
                 {{/each}}
             </ul>
         </section>
