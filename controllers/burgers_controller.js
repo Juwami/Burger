@@ -7,8 +7,8 @@ let burger = require("../models/burger");
 
 // create route tables with express
 
-router.get("/", function(req, res) {
-    burger.selectAll(function(data) {
+router.get("/", function (req, res) {
+    burger.selectAll(function (data) {
         let hbsObject = {
             burgers: data
         }
@@ -18,24 +18,26 @@ router.get("/", function(req, res) {
     })
 })
 
-router.post("/api/burgers", function(req, res) {
+router.post("/api/burgers", function (req, res) {
+    // See Typed Name
+    // console.log("Req.body:", req.body.burger_name)
     burger.insertOne([
-        "burger_name"
-    ], [
         req.body.burger_name
-    ], function(result) {
+    ], function (result) {
         // responding the results ID of what went into mySQL
-        res.json({ id: result.insertID})
+        res.json({
+            id: result.insertID
+        })
     })
 });
 
-// router.put("/api/burger/:id", function(req, res) {
-//     let id = req.params.id
-//     burger.updateOne({
-//         burger_name = req.body.name
-//     })
-//     return res.status(200).end();
-// })
+router.put("/api/burger/:id", function (req, res) {
+    let id = req.params.id
+    burger.updateOne(id, function (result) {
+        // console.log(result)
+    })
+    return res.status(200).end();
+})
 
 // export route tables
 module.exports = router
