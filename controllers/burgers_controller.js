@@ -31,20 +31,23 @@ router.post("/api/burgers", function (req, res) {
     })
 });
 
-router.put("/api/burger/:id", function (req, res) {
+router.put("/api/burgers/:id", function (req, res) {
     let id = req.params.id
     burger.updateOne(id, function (result) {
-        // console.log(result)
+        res.json({
+            changed: result.changedRows
+        })
     })
-    return res.status(200).end();
 })
 
-router.delete("/api/burger/:id", function (req,res) {
+router.delete("/api/burgers/:id", function (req, res) {
     let id = req.params.id
-    burger.deleteOne(id, function(result) {
+    burger.deleteOne(id, function (result) {
         // console.log(result)
+        res.json({
+            affected: result.affectedRows
+        })
     })
-    return res.status(200).end();
 })
 
 // export route tables
