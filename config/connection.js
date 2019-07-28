@@ -1,18 +1,25 @@
 let mysql = require("mysql");
 
-let connection = mysql.createConnection({
-    host: "localhost",
+let connection
 
-    port: process.env.PORT || 3306,
+if (process.env.JAWSDB_URL) {
+    connection = mysql.createConnection(process.env.JAWSDB_URL)
+} else {
 
-    user: "root",
+    connection = mysql.createConnection({
+        host: "localhost",
 
-    password: "root",
+        port: process.env.PORT || 3306,
 
-    database: "burgers_db"
+        user: "root",
+
+        password: "root",
+
+        database: "burgers_db"
+    })
 });
 
-connection.connect(function(err) {
+connection.connect(function (err) {
     if (err) throw err;
     console.log("Connected via ID:", connection.threadId)
 })
