@@ -12,10 +12,15 @@ let burger = {
             // cb(res);
         });
     },
-    updateOne: function(id,cb) {
+    updateOne: function(id, cb) {
         orm.updateOne(id, function(res) {
             cb(res);
         });
+    },
+    deleteOne: function(id, cb) {
+        orm.deleteOne(id, function(res) {
+            cb(res);
+        })
     }
 }
 

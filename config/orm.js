@@ -21,6 +21,13 @@ let orm = {
             if (err) throw err;
             cb(result)
         })
+    },
+    deleteOne: function(id, cb) {
+        let query = "DELETE FROM burgers WHERE id = ?";
+        connection.query(query, [id], function(err, result) {
+            if (err) throw err;
+            cb(result)
+        })
     }
 }
 

@@ -30,5 +30,11 @@ $(".eat-burger").on("click", function () {
 })
 
 $(".digest-burger").on("click", function () {
-    console.log("digest")
+    let id = $(this).data("id");
+
+    $.ajax("/api/burger/" + id, {
+        type: "DELETE"
+    }).then(function() {
+        location.reload();
+    })
 })

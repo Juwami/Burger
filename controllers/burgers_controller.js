@@ -39,5 +39,13 @@ router.put("/api/burger/:id", function (req, res) {
     return res.status(200).end();
 })
 
+router.delete("/api/burger/:id", function (req,res) {
+    let id = req.params.id
+    burger.deleteOne(id, function(result) {
+        // console.log(result)
+    })
+    return res.status(200).end();
+})
+
 // export route tables
 module.exports = router
