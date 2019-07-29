@@ -1,14 +1,15 @@
-let burgerName = $("#burger-name");
 
 // burger-name is from input
 $("#submitBtn").on("click", function (e) {
     e.preventDefault();
+    let burger = {
+        burger_name: $("#burger-name").val().trim()
+    }
 
-    if (burgerName !== "") {
+    // console.log(burger.burger_name)
+    
+    if (burger.burger_name != "") {
 
-        let burger = {
-            burger_name: burgerName.val().trim()
-        }
         // console.log("Burger Name:", burger.burger_name)
 
         $.ajax("/api/burgers", {
@@ -18,6 +19,9 @@ $("#submitBtn").on("click", function (e) {
             // console.log("Added New Burger");
             location.reload();
         })
+    }
+    else {
+        alert("You did not input a name.")
     }
 });
 
