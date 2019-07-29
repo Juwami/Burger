@@ -7,7 +7,7 @@ $("#submitBtn").on("click", function (e) {
     }
 
     // console.log(burger.burger_name)
-    
+
     if (burger.burger_name != "") {
 
         // console.log("Burger Name:", burger.burger_name)
@@ -16,7 +16,7 @@ $("#submitBtn").on("click", function (e) {
             type: "POST",
             data: burger
         }).then(function () {
-            // console.log("Added New Burger");
+            // reload doesn't work for POST - need to ask TAs
             location.reload();
         })
     }
